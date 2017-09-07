@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Random bank' });
+  res.render('index', { title: 'Random bank', money: '', recieve: '' });
 });
 
 router.get('/home', function(req, res, next) {
@@ -63,11 +63,14 @@ router.post('/withdraw',function (req, res, next) {
 
 router.post('/transfer',function (req, res, next) {
   var amount = req.body.amount;
-  console.log(`Amount: ${amount}`);
+  var reciever = req.body.reciever;
+  console.log(`Amount: ${amount}, reciever: ${reciever}`);
+  amount = parseInt(amount);
+  console.log(p+':'+users[p].money);
     if(users[p].money > amount){
       var y = users[p].money - amount;
       users[p].money = y;
-      res.redirect('/?error=2');
+      res.redirect('/?error=4&recieve='+reciever+'&money='+amount);
     } else {
       res.redirect('/?error=3');
     }

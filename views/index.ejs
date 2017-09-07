@@ -4,7 +4,9 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' >
   </head>
+
   <body>
+
     <h1>Welcome to a <%= title %></h1>
     <p>Please enter credit card number and password to transact.</p>
 
@@ -74,10 +76,13 @@
 		 } if(getAllUrlParams().error == 2) {
 		   alert('Transaction Complete!');
 		 } if(getAllUrlParams().error == 3) {
-		   alert("You don't have enough money to complet the transaction! Please enter a lower amount.");
+		   alert("You don't have enough money to complete the transaction! Please enter a lower amount.");
+		 } if(getAllUrlParams().error == 4) {
+		   alert("Succesfully sent "+getAllUrlParams().money+" to "+getAllUrlParams().recieve+"!");
 		 }
 
 	</script>
 
   </body>
 </html>
+
