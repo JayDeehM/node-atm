@@ -16,5 +16,6 @@ This is just a very simple atm app with simple functions. Updates and additional
 
 If ever you would want to contribute to this code, please feel free to send a pull request. Thanks!
 
+App test: https://simple-atm.herokuapp.com/
 
 ### I am currently studying on making a database in mongoose and will soon be implemented in the ATM app.
